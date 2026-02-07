@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statista Clone</title>
+    <link rel="stylesheet" href="s.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">statista</div>
+
+    <div class="search">
+        <input type="text" placeholder="Search statistics, studies & reports">
+        <button>Search</button>
+    </div>
+
+    <nav class="links">
+        <a href="#">Statistics</a>
+        <a href="#">Reports</a>
+        <a href="#">Insights</a>
+        <a href="#" class="signup">Sign up</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Find statistics, consumer survey results and industry studies</h1>
+    <p>Trusted by companies, universities and governments worldwide</p>
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="features">
+    <div class="feature-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+        <h3><a href="#">Statistics</a></h3>
+        <p>Over 1 million statistics on 80,000 topics</p>
+    </div>
+
+    <div class="feature-card">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df">
+        <h3><a href="#">Reports</a></h3>
+        <p>Industry & market research reports</p>
+    </div>
+
+    <div class="feature-card">
+        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+        <h3><a href="#">Consumer Insights</a></h3>
+        <p>Understand global consumer behavior</p>
+    </div>
+</section>
+
+<!-- CHARTS -->
+<section class="charts">
+    <div class="chart-card">
+        <h3>Smartphone users worldwide</h3>
+        <canvas id="barChart"></canvas>
+        <p class="source">Source: Global Technology Survey</p>
+    </div>
+
+    <div class="chart-card">
+        <h3>AI market growth worldwide</h3>
+        <canvas id="lineChart"></canvas>
+        <p class="source">Source: Industry Analysis</p>
+    </div>
+</section>
+
+<!-- TRENDING -->
+<section class="trending">
+    <h2>Trending Statistics</h2>
+    <ul>
+        <li><a href="#">📊 Internet usage in India</a></li>
+        <li><a href="#">📊 Electric vehicle sales</a></li>
+        <li><a href="#">📊 Social media users worldwide</a></li>
+        <li><a href="#">📊 AI adoption by companies</a></li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Statista-Style Website | Educational Use Only</p>
+</footer>
+
+<!-- CHART SCRIPT -->
+<script>
+const barCtx = document.getElementById('barChart');
+new Chart(barCtx, {
+    type: 'bar',
+    data: {
+        labels: ['2019','2020','2021','2022','2023'],
+        datasets: [{
+            data: [3.2, 3.5, 3.8, 4.2, 4.6],
+            backgroundColor: '#001e5a'
+        }]
+    },
+    options: {
+        plugins: { legend: { display: false } }
+    }
+});
+
+const lineCtx = document.getElementById('lineChart');
+new Chart(lineCtx, {
+    type: 'line',
+    data: {
+        labels: ['2019','2020','2021','2022','2023'],
+        datasets: [{
+            data: [50, 75, 110, 160, 220],
+            borderColor: '#001e5a',
+            fill: false,
+            tension: 0.4
+        }]
+    },
+    options: {
+        plugins: { legend: { display: false } }
+    }
+});
+</script>
+
+</body>
+</html>
